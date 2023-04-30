@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="DarkWallpaper" customModuleProvider="target">
+            <connections>
+                <outlet property="appMenu" destination="9MF-QC-Dp0" id="F39-9F-eHl"/>
+                <outlet property="appearanceMenuItem" destination="aHc-Fk-0E9" id="QHT-QC-nvx"/>
+                <outlet property="autoAppearanceMenuItem" destination="PrA-sS-VNa" id="O4E-ur-wm5"/>
+                <outlet property="hideMenuItem" destination="tXo-sS-IkI" id="VLV-Eh-JPq"/>
+                <outlet property="startMenuItem" destination="Fvj-KC-DOJ" id="pm5-mM-gDS"/>
+                <outlet property="syncMenuItem" destination="v5J-2t-EHN" id="luj-L4-KLJ"/>
+                <outlet property="view" destination="CxU-kw-eRn" id="M5y-RA-c9z"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+            <items>
+                <menuItem title="Darkmenubar" id="1Xt-HY-uBw">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Darkmenubar" systemMenu="apple" id="uQy-DD-JDr">
+                        <items>
+                            <menuItem title="About Darkmenubar" id="5kV-Vb-QxS">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="-1" id="Exp-CZ-Vem"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                            <menuItem title="Quit Darkmenubar" keyEquivalent="q" id="4sb-4s-VLi">
+                                <connections>
+                                    <action selector="terminate:" target="-1" id="Te7-pn-YzF"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="200" y="121"/>
+        </menu>
+        <window title="Darkmenubar" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="0.0" y="0.0" width="480" height="360"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+            <view key="contentView" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CxU-kw-eRn" customClass="View" customModule="DarkWallpaper" customModuleProvider="target">
+                        <rect key="frame" x="159" y="132" width="163" height="96"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </customView>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="200" y="400"/>
+        </window>
+        <menu autoenablesItems="NO" id="9MF-QC-Dp0">
+            <items>
+                <menuItem title="关于" id="ybu-8q-jgG">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="openAboutPanel:" target="Voe-Tx-rLC" id="f0V-Uv-uHq"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="4Ow-iB-erZ"/>
+                <menuItem isSeparatorItem="YES" id="ZkN-4H-pLc"/>
+                <menuItem title="桌面与菜单栏同步" state="on" id="v5J-2t-EHN">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="syncClicked:" target="Voe-Tx-rLC" id="abU-n9-O7m"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="隐藏刘海" id="tXo-sS-IkI">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="hideNotchClicked:" target="Voe-Tx-rLC" id="dbO-be-PcO"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="Rqb-25-7cH"/>
+                <menuItem title="外观跟随系统" state="on" id="PrA-sS-VNa">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="autoSetClicked:" target="Voe-Tx-rLC" id="ELE-wN-kxx"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="深色模式" id="aHc-Fk-0E9">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="setAppearanceClicked:" target="Voe-Tx-rLC" id="No4-qH-f1L"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="TIS-lh-csL"/>
+                <menuItem title="开机自启动" id="Fvj-KC-DOJ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="startAtLoginClicked:" target="Voe-Tx-rLC" id="4SY-Nq-cEq"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="KGa-7h-8A2"/>
+                <menuItem title="退出" keyEquivalent="q" id="Pqk-ks-G9h">
+                    <connections>
+                        <action selector="terminate:" target="-1" id="y2u-9o-Cf6"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="65" y="-112"/>
+        </menu>
+    </objects>
+</document>
